@@ -1,17 +1,8 @@
 
 {{> header }}
 <main class="posts">
-{{#if yes}}
-	{{#each post}}
- 		{{>post}}
-	{{/each}}
-{{else}}
-	{{#with post}}
-		{{>post}}
-	{{/with}}
-{{/if}}
-
+{{#each post}}
+ 	{{>post}}
+{{/each}}
 </main>
-{{#if yes}}
-	{{>createpostModal}}
-{{/if}}
+{{>createpostModal}}
