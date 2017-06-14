@@ -46,18 +46,11 @@ a {
 
 .navbar-search {
   	float: right;
-  	margin-right: 20px;
-  	padding: 0;
-  	background-color: none;
-  	margin-top: 4px;
-  	font-color:black;
+	margin: -7px 10px 0 0;
 }
 
 #navbar-search-input:focus {
 	background-color: white;
-	box-shadow: none;
-	outline-color: #ff8d30;
-	font-color: black;
 }
 
 #navbar-seach-input {
