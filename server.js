@@ -43,27 +43,23 @@ app.get('/posts', function(req,res, next){
 
 app.post('/posts/', function (req, res, next) {
 
-	console.log("post request!!!");
-	console.log(req.body);
-	console.log(req.params);
-	
+	var post = {
+		points: req.body.points,
+		text: req.body.text,
+		author: req.body.author
+	};
 
-	// var post = {
-	// 	points: req.body.points,
-	// 	text: req.body.text,
-	// 	author: req.body.author
-	// };
+	postData.push(post);
 
-	// person.photos = person.photos || [];
+	fs.writeFile('./public/postData.json', JSON.stringify(postData), function (err) {
+		if (err) {
+			res.status(500).send("Unable to save photo to \"database\".");
+		} else {
+			res.status(200).send();
+		}
+	});
 
-	// person.photos.push(photo);
-	// fs.writeFile('peopleData.json', JSON.stringify(peopleData), function (err) {
-	// 	if (err) {
-	// 		res.status(500).send("Unable to save photo to \"database\".");
-	// 	} else {
-	// 		res.status(200).send();
-	// 	}
-	// });
+	// next();
 });
 
 app.use(express.static(path.join(__dirname, 'public')));

@@ -47,7 +47,6 @@ function clearpostInputValues() {
 
 function generateNewpostElem(postText, postAuthor, postPoints) {
   var postTemplate = Handlebars.templates.post; //error
-  alert("here1");
   var postData = {
     text: postText,
     author: postAuthor,
@@ -70,12 +69,12 @@ function insertNewpost() {
         alert("Unable to save post.  Got this error:\n\n" + err);
       } else {
 
-        console.log('Hello')
 
         var newpostElem = generateNewpostElem(postText, postAttribution, postPoints);
         var postcontent = document.querySelector('.post-content');
         postcontent.insertAdjacentHTML('beforeend', newpostElem);
 
+        console.log(newpostElem);
         allpostElems.push(newpostElem);
 
         closeCreatepostModal();
@@ -88,9 +87,6 @@ function insertNewpost() {
   }
 }
 function storePost(text, author, callback){
-
-  console.log(text);
-  console.log(author);
 
   var postRequest = new XMLHttpRequest();
   postRequest.open('POST', '/posts/');
@@ -109,8 +105,6 @@ function storePost(text, author, callback){
     text: text,
     author: author
   };
-
-  console.log(personBody);
 
   postRequest.send(JSON.stringify(personBody));
 };
