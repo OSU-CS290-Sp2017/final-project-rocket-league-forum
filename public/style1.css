@@ -101,12 +101,12 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #create-post-modal {
   position: fixed;
-  top: 0;
+  top: 104px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -120,9 +120,9 @@ a {
 
 .modal-dialog {
   width: auto;
-  max-width: 600px;
-  min-width: 350px;
-  min-height: 300px;
+  max-width: 700px;
+  min-width: 450px;
+  min-height: 400px;
   margin: 40px auto;
   background-color: #fff;
   border-radius: 15px;
@@ -152,29 +152,31 @@ a {
 .modal-body {
   padding: 20px;
 }
-
-.twit-input-element {
+#post-text-input {
+  height: 200px;
+}
+.post-input-element {
   display: flex;
-  align-items: center;
   font-size: 20px;
   margin: 10px 0;
+  
 }
 
-.twit-input-element label {
+.post-input-element label {
   font-weight: 600;
   flex: 1 75px;
   margin-right: 10px;
 }
 
-.twit-input-element input,
-.twit-input-element textarea {
+.post-input-element input,
+.post-input-element textarea {
   flex: 6 200px;
   padding: 8px;
   font-size: 20px;
   border: 1px solid #aaa;
 }
 
-.twit-input-element textarea {
+.post-input-element textarea {
   min-height: 64px;
 }
 
@@ -195,32 +197,22 @@ a {
   cursor: pointer;
 }
 
-.modal-footer .modal-cancel-button:hover {
-  background-color: #eee;
+.modal-footer .modal-cancel-button {
+  background-color: #016cbe;
+  color: #fff;
+  margin-top: 0px;
 }
 
-.modal-footer .modal-accept-button {
-  background-color: #319df6;
+.modal-footer .modal-cancel-button:hover {
+  background-color: #025da2;
   color: #fff;
+}
+.modal-footer .modal-accept-button {
+  background-color: #ff8d30;
+  color: #fff;
+  margin-top: 0px;
 }
 
 .modal-footer .modal-accept-button:hover {
-  background-color: #087dde;
-}
-
-.error-container {
-  margin-top: 50px;
-  text-align: center;
-}
-
-.error-container h2 {
-  margin: 10px 0;
-  font-size: 96px;
-  font-weight: 100;
-}
-
-.error-container h3 {
-  margin: 10px 0;
-  font-size: 36px;
-  font-weight: 400;
+  background-color: #d6772a;
 }
