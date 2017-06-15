@@ -101,19 +101,19 @@ function storePost(text, author, callback){
 
 function dopostSearch() {
 
-  var searchQuery = document.getElementById('navbar-search-input').value;
-  searchQuery = searchQuery ? searchQuery.trim().toLowerCase() : '';
+  // var searchQuery = document.getElementById('navbar-search-input').value;
+  // searchQuery = searchQuery ? searchQuery.trim().toLowerCase() : '';
 
-  var postcontent = document.querySelector('.post-content');
-  while (postcontent.lastChild) {
-    postcontent.removeChild(postcontent.lastChild);
-  }
+  // var postcontent = document.querySelector('.post-content');
+  // while (postcontent.lastChild) {
+  //   postcontent.removeChild(postcontent.lastChild);
+  // }
 
-  allpostElems.forEach(function (postElem) {
-    if (!searchQuery || postElem.textContent.toLowerCase().indexOf(searchQuery) !== -1) {
-      postcontent.appendChild(postElem);
-    }
-  });
+  // allpostElems.forEach(function (postElem) {
+  //   if (!searchQuery || postElem.textContent.toLowerCase().indexOf(searchQuery) !== -1) {
+  //     postcontent.appendChild(postElem);
+  //   }
+  // });
 
 }
 
