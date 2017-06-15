@@ -1,5 +1,6 @@
 var allpostElems = [];
 
+
 function showCreatepostModal() {
 
   var modalBackdrop = document.getElementById('modal-backdrop');
@@ -86,9 +87,9 @@ function dopostSearch() {
 
 }
 
-function changePointsup() {
+/*function changePointsup() {
   var choice = 1;
-  var current_num = ;
+  var current_num;
 
   var new_num = (current_num + choice);
   document.getElementsByClassName("points").innerHTML = new_num;
@@ -100,7 +101,7 @@ function changePointsdown() {
   var new_num = (current_num + choice);
   document.getElementsByClassName("points").innerHTML = new_num;
 
-}
+}*/
 
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -125,7 +126,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var searchInput = document.getElementById('navbar-search-input');
   searchInput.addEventListener('input', dopostSearch);
 
-  var upvote = document.getElementsByClassName('upvote');
+  /*var upvote = document.getElementsByClassName('upvote');
   for (var i=0; i<upvote.length; i++){
     upvote[i].addEventListener('click',changePointsup);
   }
@@ -133,5 +134,5 @@ window.addEventListener('DOMContentLoaded', function () {
   var downvote = document.getElementsByClassName('downvote');
   for (var i=0; i<downvote.length; i++){
     downvote[i].addEventListener('click',changePointsdown);
-  }
+  }*/
 });

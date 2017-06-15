@@ -9,6 +9,13 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.get('/', function(req,res, next){
+	
+	res.render('postPage');
+
+});
+
+app.get('/posts', function(req,res, next){
+
 	var twitty = [postData];
 	if (twitty) {
 		var templateArgs = {
@@ -28,6 +35,7 @@ app.get('/', function(req,res, next){
 	}
 
 	res.render('postPage', templateArgs);
+
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
