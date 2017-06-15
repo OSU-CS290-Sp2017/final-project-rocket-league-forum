@@ -239,29 +239,29 @@ h3 {
   color: #016cbe;
 }
 .parallax {
-    background-image: url('background.jpg');
+    background-image: url('images/background.jpg');
     height: 700px;
     min-height: 100%;
     margin-top:19px;
 }
 .parallax1 {
-    background-image: url('background.jpg');
+    background-image: url('images/background.jpg');
     height: 1000px;
     min-height: 100%;
 }
 
 .photo1 {
-    background-image: url('1.jpg');
+    background-image: url('images/1.jpg');
     height: 800px;
     min-height: 100%;
 }
 .photo2 {
-    background-image: url('2.jpg');
+    background-image: url('images/2.jpg');
     height: 800px;
     min-height: 100%;
 }
 .photo3 {
-    background-image: url('3.jpg');
+    background-image: url('images/3.jpg');
     height: 800px;
     min-height: 100%;
 }

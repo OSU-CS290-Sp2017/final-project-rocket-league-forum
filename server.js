@@ -2,7 +2,7 @@ var path = require('path');
 var fs = require('fs');
 var express = require('express');
 var exphbs = require('express-handlebars');
-var postData = require('./public/postData');
+var postData = require('./postData');
 var app = express();
 var bodyParser = require('body-parser');
 
@@ -51,7 +51,7 @@ app.post('/posts/', function (req, res, next) {
 
 	postData.push(post);
 
-	fs.writeFile('./public/postData.json', JSON.stringify(postData), function (err) {
+	fs.writeFile('./postData.json', JSON.stringify(postData), function (err) {
 		if (err) {
 			res.status(500).send("Unable to save photo to \"database\".");
 		} else {
@@ -79,7 +79,7 @@ app.post('/votes/', function (req, res, next) {
 	});
 	postData[index] = post
 
-	fs.writeFile('./public/postData.json', JSON.stringify(postData), function (err) {
+	fs.writeFile('./postData.json', JSON.stringify(postData), function (err) {
 		if (err) {
 			res.status(500).send("Unable to save photo to \"database\".");
 		} else {

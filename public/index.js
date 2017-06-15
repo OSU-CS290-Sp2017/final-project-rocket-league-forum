@@ -1,17 +1,4 @@
 var allpostElems = [];
-var postData = [];
-
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    postData = JSON.parse(this.response);
-  }
-};
-xhttp.open("GET", "postData.json", false);
-xhttp.send();
-
-console.log(postData[0])
-
 
 function showCreatepostModal() {
 
