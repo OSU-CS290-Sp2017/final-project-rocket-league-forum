@@ -1,7 +1,11 @@
+header {
+  background-color: #333333;
+}
 body {
+    height: 100%;
   	font-family: Montserrat, Helvetica, sans-serif;
   	margin: 0;
-  	background-color: #333333;
+  	background-color: rgb(237, 242, 253);
 }
 
 a {
@@ -82,7 +86,7 @@ a {
 	color: #016cbe;
 }
 .post {
-	border: 1px solid #333333;
+	border: 1px solid black;
 }
 
 .author {
@@ -219,4 +223,112 @@ a {
 
 .modal-footer .modal-accept-button:hover {
   background-color: #d6772a;
+}
+
+h2, h3, h4 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 45px;
+  color: #ff8d30;
+}
+
+h3 {
+  font-size: 35px;
+  color: #016cbe;
+}
+.parallax {
+    background-image: url('background.jpg');
+    height: 700px;
+    min-height: 100%;
+    margin-top:19px;
+}
+.parallax1 {
+    background-image: url('background.jpg');
+    height: 1000px;
+    min-height: 100%;
+}
+
+.photo1 {
+    background-image: url('1.jpg');
+    height: 800px;
+    min-height: 100%;
+}
+.photo2 {
+    background-image: url('2.jpg');
+    height: 800px;
+    min-height: 100%;
+}
+.photo3 {
+    background-image: url('3.jpg');
+    height: 800px;
+    min-height: 100%;
+}
+
+.parallax, .parallax1, .photo1, .photo2, .photo3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h5 {
+  margin: 10px;
+  font-size: 75px;
+}
+
+.para-text {
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.link {
+  font-size: 100px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  color: black;
+  bottom: 10px;
+  background-color: solid black;
+
+}
+
+.fa-twitch:hover {
+  color: #6441a4;
+}
+.fa-twitch {
+  padding: 35px;
+}
+
+.fa-twitter:hover {
+  color: #319df6;
+}
+.fa-twitter {
+  padding: 35px;
+}
+
+.fa-youtube:hover {
+  color: #e62117;
+}
+.fa-youtube {
+  padding: 35px;
+}
+
+.fa-reddit-alien:hover {
+  color: #ff4500;
+}
+.fa-reddit-alien {
+  padding: 35px;
+}
+
+.fa-facebook:hover {
+  color: #4867aa;
+}
+.fa-facebook {
+  padding: 35px;
 }
