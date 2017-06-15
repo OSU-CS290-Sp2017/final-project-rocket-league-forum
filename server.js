@@ -5,8 +5,6 @@ var exphbs = require('express-handlebars');
 var postData = require('./postData');
 var app = express();
 
-postData.writeFile('HeyRyan')
-
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -17,16 +15,18 @@ app.get('/', function(req,res, next){
 			post: postData,
 			yes: true,
 		};
-		temp = [];
-		templateArgs.post.forEach(function(element){
-			console.log(element.points);
-			temp.push(element.points);
-		});
-		console.log(temp);
-		temp.forEach(function(element){
-		});
-
 	}
+
+	for (var i=0; i<templateArgs.post.length; i++){
+		for (var j=0; j<templateArgs.post.length-1; j++){
+			if (parseInt(templateArgs.post[j+1].points) > parseInt(templateArgs.post[j].points)){
+				var temp = templateArgs.post[j+1].points;
+				templateArgs.post[j+1].points = templateArgs.post[j].points;
+				templateArgs.post[j].points = temp;
+			}
+		}
+	}
+
 	res.render('postPage', templateArgs);
 });
 
