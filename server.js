@@ -10,7 +10,7 @@ app.set('view engine', 'handlebars');
 
 app.get('/', function(req,res, next){
 	
-	res.render('postPage');
+	res.render('home');
 
 });
 
@@ -38,12 +38,39 @@ app.get('/posts', function(req,res, next){
 
 });
 
+app.post('/posts/', function (req, res, next) {
+
+	console.log("post request!!!");
+	console.log(req.body);
+	console.log(req.params);
+	
+
+	// var post = {
+	// 	points: req.body.points,
+	// 	text: req.body.text,
+	// 	author: req.body.author
+	// };
+
+	// person.photos = person.photos || [];
+
+	// person.photos.push(photo);
+	// fs.writeFile('peopleData.json', JSON.stringify(peopleData), function (err) {
+	// 	if (err) {
+	// 		res.status(500).send("Unable to save photo to \"database\".");
+	// 	} else {
+	// 		res.status(200).send();
+	// 	}
+	// });
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', function (req, res){
 	res.status(404).render('404Page');
 });
 
-app.listen(3000, function() {
-	console.log('Running on Port 3000');
+app.listen(process.env.PORT || 3000, function() {
+	if (process.env.PORT)
+		console.log('Running on Port ' + process.env.PORT);
+	else console.log('Running on Port 3000');
 });

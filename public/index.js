@@ -12,6 +12,7 @@ xhttp.send();
 
 console.log(postData[0])
 
+
 function showCreatepostModal() {
 
   var modalBackdrop = document.getElementById('modal-backdrop');
@@ -60,24 +61,60 @@ function insertNewpost() {
 
   var postText = document.getElementById('post-text-input').value;
   var postAttribution = document.getElementById('post-attribution-input').value;
-  var postPoints = "0";
 
   if (postText && postAttribution) {
 
-    var newpostElem = generateNewpostElem(postText, postAttribution, postPoints);
-    var postcontent = document.querySelector('.post-content');
-    postcontent.insertAdjacentHTML('beforeend', newpostElem);
+    storePost(postText, postAttribution, function(err){
 
-    allpostElems.push(newpostElem);
+      if (err) {
+        alert("Unable to save post.  Got this error:\n\n" + err);
+      } else {
 
-    closeCreatepostModal();
 
-  } else {
 
-    alert('You must specify both the text and the author of the post!');
+        var newpostElem = generateNewpostElem(postText, postAttribution, postPoints);
+        var postcontent = document.querySelector('.post-content');
+        postcontent.insertAdjacentHTML('beforeend', newpostElem);
 
+        allpostElems.push(newpostElem);
+
+        closeCreatepostModal();
+
+      }
+
+    });
+  }
+  else {
+    alert('Both text and author text must be present!!')
   }
 }
+function storePost(text, author, callback){
+
+  console.log(text);
+  console.log(author);
+
+  var postRequest = new XMLHttpRequest();
+  postRequest.open('POST', '/posts/');
+  postRequest.setRequestHeader('Content-Type', 'application/json');
+
+  postRequest.addEventListener('load', function (event) {
+    var error;
+    if (event.target.status !== 200) {
+      error = event.target.response;
+    }
+    callback(error);
+  });
+
+  var personBody = {
+    points: '0',
+    text: text,
+    author: author
+  };
+
+  console.log(personBody);
+
+  postRequest.send(JSON.stringify(personBody));
+};
 
 
 function dopostSearch() {
