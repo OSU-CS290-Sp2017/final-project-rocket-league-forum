@@ -1,6 +1,3 @@
-//AUTHOR:  Ryan Sisco
-//GITHUB USERNAME:  ryansisco
-
 var path = require('path');
 var fs = require('fs');
 var express = require('express');
@@ -8,6 +5,7 @@ var exphbs = require('express-handlebars');
 var postData = require('./postData');
 var app = express();
 
+postData.writeFile('HeyRyan')
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -17,8 +15,17 @@ app.get('/', function(req,res, next){
 	if (twitty) {
 		var templateArgs = {
 			post: postData,
-			yes: 1,
+			yes: true,
 		};
+		temp = [];
+		templateArgs.post.forEach(function(element){
+			console.log(element.points);
+			temp.push(element.points);
+		});
+		console.log(temp);
+		temp.forEach(function(element){
+		});
+
 	}
 	res.render('postPage', templateArgs);
 });
