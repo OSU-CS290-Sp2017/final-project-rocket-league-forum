@@ -130,21 +130,58 @@ function dopostSearch() {
 
 }
 
-/*function changePointsup() {
-  var choice = 1;
-  var current_num;
+function changePointsup(event) {
+  event.target.parentNode.parentNode.querySelector('.points').innerHTML++;
 
-  var new_num = (current_num + choice);
-  document.getElementsByClassName("points").innerHTML = new_num;
+  var postRequest = new XMLHttpRequest();
+  postRequest.open('POST', '/votes/');
+  postRequest.setRequestHeader('Content-Type', 'application/json');
+
+  postRequest.addEventListener('load', function (event) {
+    var error;
+    if (event.target.status !== 200) {
+      error = event.target.response;
+    }
+    callback(error);
+  });
+
+  console.log(event.target.parentNode.parentNode.querySelector('.text').innerHTML);
+
+  var personBody = {
+    points: event.target.parentNode.parentNode.querySelector('.points').innerHTML.trim(),
+    text: event.target.parentNode.parentNode.querySelector('.text').innerHTML.trim(),
+    author: event.target.parentNode.parentNode.querySelector('a').innerHTML.trim()
+  };
+
+  postRequest.send(JSON.stringify(personBody));
 
 }
-function changePointsdown() {
-  var choice = -1;
-  var current_num = parseInt(document.getElementsByClassName("points"));
-  var new_num = (current_num + choice);
-  document.getElementsByClassName("points").innerHTML = new_num;
+function changePointsdown(event) {
+  event.target.parentNode.parentNode.querySelector('.points').innerHTML--;
 
-}*/
+  var postRequest = new XMLHttpRequest();
+  postRequest.open('POST', '/votes/');
+  postRequest.setRequestHeader('Content-Type', 'application/json');
+
+  postRequest.addEventListener('load', function (event) {
+    var error;
+    if (event.target.status !== 200) {
+      error = event.target.response;
+    }
+    callback(error);
+  });
+
+  console.log(event.target.parentNode.parentNode.querySelector('.text').innerHTML);
+
+  var personBody = {
+    points: event.target.parentNode.parentNode.querySelector('.points').innerHTML.trim(),
+    text: event.target.parentNode.parentNode.querySelector('.text').innerHTML.trim(),
+    author: event.target.parentNode.parentNode.querySelector('a').innerHTML.trim()
+  };
+
+  postRequest.send(JSON.stringify(personBody));
+
+}
 
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -169,7 +206,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var searchInput = document.getElementById('navbar-search-input');
   searchInput.addEventListener('input', dopostSearch);
 
-  /*var upvote = document.getElementsByClassName('upvote');
+  var upvote = document.getElementsByClassName('upvote');
   for (var i=0; i<upvote.length; i++){
     upvote[i].addEventListener('click',changePointsup);
   }
@@ -177,5 +214,5 @@ window.addEventListener('DOMContentLoaded', function () {
   var downvote = document.getElementsByClassName('downvote');
   for (var i=0; i<downvote.length; i++){
     downvote[i].addEventListener('click',changePointsdown);
-  }*/
+  }
 });

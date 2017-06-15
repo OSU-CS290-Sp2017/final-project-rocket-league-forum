@@ -58,8 +58,34 @@ app.post('/posts/', function (req, res, next) {
 			res.status(200).send();
 		}
 	});
+});
 
-	// next();
+app.post('/votes/', function (req, res, next) {
+
+	var temp = req.body.text
+
+	var post = {
+		points: req.body.points,
+		text: req.body.text,
+		author: req.body.author
+	};
+	var i = 0;
+	var index;
+	postData.forEach(function(element){
+		if (element.text.localeCompare(temp) == 0){
+			index = i;
+		}
+		i++;
+	});
+	postData[index] = post
+
+	fs.writeFile('./public/postData.json', JSON.stringify(postData), function (err) {
+		if (err) {
+			res.status(500).send("Unable to save photo to \"database\".");
+		} else {
+			res.status(200).send();
+		}
+	});
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
