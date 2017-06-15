@@ -1,0 +1,222 @@
+body {
+  	font-family: Montserrat, Helvetica, sans-serif;
+  	margin: 0;
+  	background-color: #333333;
+}
+
+a {
+	color: black;
+  	text-decoration: none;
+}
+
+.navitem a:hover {
+	color: #ff8d30;
+}
+
+.logo {
+	padding: 3px;
+}
+
+.site-title {
+	color: white;
+	background-color: none;
+	display: inline-block;
+	font-size: 40px;
+	margin-left: 10px;
+	line-height: 2px;
+	margin-bottom:0px;
+}
+.navbar {
+  	background-color:;
+  	font-size: 18px;
+  	line-height: 15px;
+  	height: 10px;
+  	margin-top: 0px;
+}
+
+.navlist {
+  	background-color: grey;
+  	padding: 0;
+}	
+
+.navitem {
+  	display: inline-block;
+  	padding: 7px;
+}
+
+.navbar-search {
+  	float: right;
+	margin: -7px 10px 0 0;
+}
+
+#navbar-search-input:focus {
+	background-color: white;
+}
+
+#navbar-seach-input {
+	background-color: black;
+}
+.posts {
+	margin-top: 20px;
+	background-color: lightgrey;
+}
+.upvote {
+	margin-left: 3px;
+	margin-bottom: 0px;
+  width: 20px;
+  cursor: pointer;
+
+}
+.upvote:hover {
+	color: #ff8d30;
+}
+
+.downvote {
+	margin-left: 3px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+  width: 20px;
+  cursor: pointer;
+}
+.downvote:hover {
+	color: #016cbe;
+}
+.post {
+	border: 1px solid #333333;
+}
+
+.author {
+	margin-left: 30px;
+	font-weight: bold;
+}
+.text {
+	margin-left: 30px;
+}
+.points {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 1px;
+}
+
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#create-post-modal {
+  position: fixed;
+  top: 104px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-dialog {
+  width: auto;
+  max-width: 700px;
+  min-width: 450px;
+  min-height: 400px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.modal-header {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.modal-close-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+#post-text-input {
+  height: 200px;
+}
+.post-input-element {
+  display: flex;
+  font-size: 20px;
+  margin: 10px 0;
+  
+}
+
+.post-input-element label {
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 10px;
+}
+
+.post-input-element input,
+.post-input-element textarea {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+}
+
+.post-input-element textarea {
+  min-height: 64px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+.modal-footer button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-footer .modal-cancel-button {
+  background-color: #016cbe;
+  color: #fff;
+  margin-top: 0px;
+}
+
+.modal-footer .modal-cancel-button:hover {
+  background-color: #025da2;
+  color: #fff;
+}
+.modal-footer .modal-accept-button {
+  background-color: #ff8d30;
+  color: #fff;
+  margin-top: 0px;
+}
+
+.modal-footer .modal-accept-button:hover {
+  background-color: #d6772a;
+}
