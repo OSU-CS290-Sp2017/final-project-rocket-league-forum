@@ -70,7 +70,7 @@ function insertNewpost() {
         alert("Unable to save post.  Got this error:\n\n" + err);
       } else {
 
-
+        console.log('Hello')
 
         var newpostElem = generateNewpostElem(postText, postAttribution, postPoints);
         var postcontent = document.querySelector('.post-content');
@@ -79,7 +79,6 @@ function insertNewpost() {
         allpostElems.push(newpostElem);
 
         closeCreatepostModal();
-
       }
 
     });

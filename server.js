@@ -4,9 +4,12 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var postData = require('./public/postData');
 var app = express();
+var bodyParser = require('body-parser');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+app.use(bodyParser.json());
 
 app.get('/', function(req,res, next){
 	
