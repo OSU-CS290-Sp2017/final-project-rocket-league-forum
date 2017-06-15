@@ -2,7 +2,7 @@ var path = require('path');
 var fs = require('fs');
 var express = require('express');
 var exphbs = require('express-handlebars');
-var postData = require('./postData');
+var postData = require('./public/postData');
 var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -27,9 +27,9 @@ app.get('/posts', function(req,res, next){
 	for (var i=0; i<templateArgs.post.length; i++){
 		for (var j=0; j<templateArgs.post.length-1; j++){
 			if (parseInt(templateArgs.post[j+1].points) > parseInt(templateArgs.post[j].points)){
-				var temp = templateArgs.post[j+1].points;
-				templateArgs.post[j+1].points = templateArgs.post[j].points;
-				templateArgs.post[j].points = temp;
+				var temp = templateArgs.post[j+1];
+				templateArgs.post[j+1] = templateArgs.post[j];
+				templateArgs.post[j] = temp;
 			}
 		}
 	}

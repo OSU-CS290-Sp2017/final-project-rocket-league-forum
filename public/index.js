@@ -1,5 +1,16 @@
 var allpostElems = [];
+var postData = [];
 
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    postData = JSON.parse(this.response);
+  }
+};
+xhttp.open("GET", "postData.json", false);
+xhttp.send();
+
+console.log(postData[0])
 
 function showCreatepostModal() {
 
@@ -50,16 +61,16 @@ function insertNewpost() {
   var postText = document.getElementById('post-text-input').value;
   var postAttribution = document.getElementById('post-attribution-input').value;
   var postPoints = "0";
- 
+
   if (postText && postAttribution) {
 
-      var newpostElem = generateNewpostElem(postText, postAttribution, postPoints);
-      var postcontent = document.querySelector('.post-content');
-      postcontent.insertAdjacentHTML('beforeend', newpostElem);
+    var newpostElem = generateNewpostElem(postText, postAttribution, postPoints);
+    var postcontent = document.querySelector('.post-content');
+    postcontent.insertAdjacentHTML('beforeend', newpostElem);
 
-      allpostElems.push(newpostElem);
+    allpostElems.push(newpostElem);
 
-      closeCreatepostModal();
+    closeCreatepostModal();
 
   } else {
 
